@@ -28,6 +28,10 @@ console.log(req.params.id);
 let user = Number(req.params.id);
 console.log(user);
 console.log(data[user])
+console.log(req.originalUrl);
+console.log(req.method);
+// above middleware is called before the response method
+
 res.send(data[user])
 next();
 },
@@ -47,7 +51,7 @@ app.put('/putItem', (req, res) =>
 app.delete('/deleteItem', (req, res) =>
     res.send("Hello World! Delete")
 );
-
+//Chaining is explained below 
 app.route('/Item')
     .get((req, res) => {
         res.send("New get response")
@@ -59,3 +63,37 @@ app.route('/Item')
     res.send("Hello World! Del")
     );
 
+//Middleware : fns having access to re and res objects
+
+
+var http = require('http');
+http.createServer(function (req, res) {
+    res.writeHead(200);
+  
+    
+    res.end();
+
+}).listen(8080);   
+
+console.log("listning to 8080")
+
+
+//1 Node register request event
+//Goes into event loop for request
+//When req comes , it will execute callback
+
+
+//JSON
+// {
+    // "name" : "John",
+    // "age" : 30,
+    // "city" : "New York",
+    
+
+// }
+//passing JSON data fromclient(postman) to server
+app.use(express.json());
+app.post('/item23', (req, res) => {
+    console.log(req.body);
+    res.send(req.body);
+});     

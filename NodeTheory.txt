@@ -1,0 +1,15 @@
+Build scalable network apps using js on server side using v8 engine.
+Node provide a wrapper around v8 to provide some functionalities.
+EG: Chatboats, file upload clients, Ad servers etc
+Node applications are used for single threaded server.
+REPL Commands
+Ctrl + c − terminate the current command.
+Ctrl + c twice − terminate the Node REPL.
+Ctrl + d − terminate the Node REPL.
+Up/Down Keys − see command history and modify previous commands.
+Tab Keys − list of current commands.
+.help − list of all commands.
+.break − exit from multiline expression.
+.clear − exit from multiline expression.
+.save filename − save the current Node REPL session to a file.
+.load filename − load file content in current Node REPL session.
