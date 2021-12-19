@@ -8,7 +8,7 @@ const port = 3000;
 //add specific middleware/path
 app.use(express.static("public"));
 app.use('/img', express.static('img'));
-app.use(favicon(path.join(__dirname, 'public', 'ico.png')));
+app.use(favicon(path.join(__dirname, 'public', 'i.ico')));
 app.listen(port,()=>{
     console.log(`server is running on port ${port}`);
     //console.log(data);
